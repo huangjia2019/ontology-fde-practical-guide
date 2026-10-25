@@ -1,7 +1,5 @@
 # 企业本体论：人人都是 FDE
 
-你好，我是黄佳，大家也叫我咖哥。这里是《企业本体论：人人都是FDE》的配套项目。
-
 <a href="https://u.jd.com/5gaL3hM"><img src="docs/assets/book-cover.jpg" alt="《企业本体论：人人都是FDE》书封面，黄佳著" width="360"></a>
 
 [京东购书：《企业本体论：人人都是FDE》](https://u.jd.com/5gaL3hM)
