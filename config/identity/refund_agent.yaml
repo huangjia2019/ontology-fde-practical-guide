@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "identity": {
+    "display_name": "Yunfan Refund Agent",
+    "technical_id": "agent.cs.refund.001",
+    "department": "Customer Service",
+    "business_owner": "Customer Service Operations Lead",
+    "technical_owner": "Customer Platform Engineering",
+    "security_principal": "workload://yunfan/prod/agent.cs.refund.001",
+    "trust_level": "L4-conditional",
+    "representation": "as_itself"
+  },
+  "agency": {
+    "read": [
+      "Customer:customer_id,tier,channel",
+      "Order:order_id,status,paid_amount,invoice_status,signed_at",
+      "OrderItem:item_id,sku,category,condition",
+      "RefundRequest:*",
+      "RiskSignal:level,reason,observed_at",
+      "Ticket:ticket_id,type,status",
+      "Invoice:invoice_id,status",
+      "Evidence:evidence_id,kind,status"
+    ],
+    "draft": ["RefundDecisionDraft", "HumanApprovalPacket"],
+    "call": ["query_refund_context", "evaluate_refund_rules", "create_payment_instruction"],
+    "write": [
+      "RefundRequest.status:approved",
+      "RefundRequest.status:pending_human",
+      "RefundRequest.status:approval_pending_payment",
+      "PaymentInstruction:create",
+      "HumanApprovalPacket:create",
+      "EvidenceRequestDraft:create",
+      "FinanceManualTask:create",
+      "DecisionRecord:create"
+    ],
+    "delegate": ["agent.cs.risk.001:request_risk_review"],
+    "forbidden": [
+      "read_full_bank_card",
+      "read_national_id",
+      "change_refund_amount",
+      "approve_amount_above_500",
+      "call_raw_payment_refund_api",
+      "modify_contract"
+    ]
+  },
+  "relationship": {
+    "users": ["Customer service specialist", "Customer service supervisor"],
+    "supervisors": ["Customer service supervisor", "Finance reviewer", "Agent operations lead"],
+    "data_sources": ["CRM", "COMMERCE", "AFTER_SALES", "ERP", "SUPPORT", "RISK", "EVIDENCE", "PAYMENTS"],
+    "systems": ["Customer master data", "Online store orders", "After-sales requests", "Invoice ledger", "Support tickets", "Risk signals", "Evidence service", "ERP refund instructions"],
+    "peer_agents": ["agent.cs.reception.001", "agent.cs.risk.001"],
+    "policies": ["POL-REFUND-2026", "POL-LEAST-PRIVILEGE", "POL-AUDIT-RETENTION"]
+  },
+  "temporality": {
+    "lifecycle_state": "gray",
+    "agent_version": "0.3.0",
+    "model_version": "deterministic-policy-demo",
+    "prompt_version": "intent-v1",
+    "ontology_version": "objects-v0.1",
+    "policy_version": "refund-rules-v1.0",
+    "eval_baseline": "golden-v1.0-36",
+    "promotion_gate": {
+      "from": "L3-human-decision",
+      "to": "L4-conditional-auto",
+      "requires": [
+        "golden_replay == 36/36",
+        "incident_replay == 2/2",
+        "decision_record_coverage == 100%",
+        "permission_denied_test == pass",
+        "business_owner_approval == true"
+      ]
+    },
+    "rollback_on": [
+      "guardrail_breach",
+      "unexplained_write",
+      "evidence_lineage_missing"
+    ],
+    "go_live_date": null,
+    "authorization_history": [
+      {"date": "2026-07-01", "change": "Read enabled in demo"},
+      {"date": "2026-07-08", "change": "Draft enabled after expert review"},
+      {"date": "2026-07-10", "change": "Conditional Write enabled at RMB 500"}
+    ],
+    "retirement_conditions": ["replacement_version_accepted", "policy_owner_withdraws", "critical_audit_failure"]
+  }
+}

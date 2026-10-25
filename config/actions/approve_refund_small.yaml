@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "action_id": "approve_refund_small",
+  "business_meaning": "Approve a low-risk, well-evidenced refund request of no more than RMB 500",
+  "owner": "Customer Service",
+  "version": "contract-v1.0",
+  "actor": {
+    "allowed": ["agent.cs.refund.001", "role:cs_supervisor"],
+    "representation": "as_itself"
+  },
+  "target_object": "RefundRequest",
+  "risk_level": "medium",
+  "inputs": ["refund_id", "customer_id", "order_id", "order_item_id", "amount", "evidence_refs"],
+  "preconditions": [
+    "RefundRequest.status == pending_review",
+    "RefundRequest.amount <= 500",
+    "Order.status in [signed, closed]",
+    "Order.invoice_status in [none, reversed]",
+    "RiskSignal.level == clear",
+    "Evidence.status == accepted",
+    "Customer.channel == b2c",
+    "Customer.tier != blacklist",
+    "previous_refunds_30d < 2"
+  ],
+  "effects": [
+    "RefundRequest.status -> approved",
+    "PaymentInstruction.status -> created",
+    "DecisionRecord.created"
+  ],
+  "approval": {
+    "auto_if": "amount <= 500 and all(preconditions)",
+    "human_if": "amount > 500 or any(policy_requires_human)",
+    "threshold_cny": 500
+  },
+  "idempotency": {
+    "key": "refund_id + action_id + intent_id",
+    "on_duplicate": "return_original_decision_record"
+  },
+  "failure_handling": {
+    "payment_instruction_failure": "set approval_pending_payment and create finance_manual_task",
+    "unknown_failure": "stop_and_alert"
+  },
+  "compensation": {
+    "state": "approval_pending_payment",
+    "action": "create_finance_manual_task",
+    "note": "Compensation contains the failure; it does not pretend that approval never occurred"
+  },
+  "audit_required": [
+    "decision_id", "correlation_id", "actor", "permission_policy_id", "authority", "target_objects", "source_refs",
+    "checks", "rule_hits", "approval", "state_before", "state_after", "actual_effect"
+  ]
+}

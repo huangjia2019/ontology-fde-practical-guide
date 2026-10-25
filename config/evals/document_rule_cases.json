@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "rule_id": "DRAFT-R1-OPENED-CONSUMABLE",
+  "cases": [
+    {"case_id": "DR-POSITIVE-001", "kind": "positive", "given": {"customer_channel": "b2c", "item_category": "opened_consumable", "hours_since_signed": 25}, "expect": "match"},
+    {"case_id": "DR-NEGATIVE-001", "kind": "negative", "given": {"customer_channel": "b2c", "item_category": "accessory", "hours_since_signed": 25}, "expect": "no_match"},
+    {"case_id": "DR-BOUNDARY-001", "kind": "boundary", "given": {"customer_channel": "b2c", "item_category": "opened_consumable", "hours_since_signed": 24}, "expect": "no_match"},
+    {"case_id": "DR-MISSING-001", "kind": "missing_data", "given": {"customer_channel": "b2c", "item_category": "opened_consumable", "hours_since_signed": null}, "expect": "missing_data"},
+    {"case_id": "DR-SCOPE-001", "kind": "out_of_scope", "given": {"customer_channel": "b2b", "item_category": "opened_consumable", "hours_since_signed": 48}, "expect": "out_of_scope"}
+  ]
+}

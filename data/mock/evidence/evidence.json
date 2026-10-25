@@ -1,0 +1,18 @@
+{
+  "source_system": "EVIDENCE",
+  "extract_id": "EVIDENCE-20260711T090600+0800",
+  "extracted_at": "2026-07-11T09:06:00+08:00",
+  "records": [
+    {"source_id": "OSS-OBJ-A7F2", "canonical_id": "EV-0311-1", "refund_id": "YF-R-0311", "kind": "video", "verification_status": "accepted", "sha256_prefix": "a7f2c91e", "captured_at": "2026-07-10T18:38:00+08:00", "verified_at": "2026-07-10T18:41:10+08:00"},
+    {"source_id": "OSS-OBJ-B1D4", "canonical_id": "EV-0312-1", "refund_id": "YF-R-0312", "kind": "photo", "verification_status": "accepted", "sha256_prefix": "b1d4a210", "captured_at": "2026-07-10T18:43:00+08:00", "verified_at": "2026-07-10T18:45:05+08:00"},
+    {"source_id": "DMS-DOC-CT88", "canonical_id": "EV-0415-1", "refund_id": "YF-R-0415", "kind": "contract_excerpt", "verification_status": "accepted", "sha256_prefix": "c3aa809d", "captured_at": "2026-07-10T18:59:00+08:00", "verified_at": "2026-07-10T19:05:20+08:00"},
+    {"source_id": "OSS-OBJ-C5E8", "canonical_id": "EV-0500-1", "refund_id": "YF-R-0500", "kind": "audio", "verification_status": "accepted", "sha256_prefix": "c5e8f013", "captured_at": "2026-07-10T19:08:00+08:00", "verified_at": "2026-07-10T19:10:10+08:00"},
+    {"source_id": "OSS-OBJ-D9A1", "canonical_id": "EV-0501-1", "refund_id": "YF-R-0501", "kind": "video", "verification_status": "accepted", "sha256_prefix": "d9a1c442", "captured_at": "2026-07-10T19:10:00+08:00", "verified_at": "2026-07-10T19:12:10+08:00"},
+    {"source_id": "OSS-OBJ-E2B7", "canonical_id": "EV-0602-1", "refund_id": "YF-R-0602", "kind": "photo", "verification_status": "accepted", "sha256_prefix": "e2b75d08", "captured_at": "2026-07-10T19:13:00+08:00", "verified_at": "2026-07-10T19:15:30+08:00"},
+    {"source_id": "OSS-OBJ-F601", "canonical_id": "EV-0610-1", "refund_id": "YF-R-0610", "kind": "photo", "verification_status": "accepted", "sha256_prefix": "f60148aa", "captured_at": "2026-07-10T19:16:00+08:00", "verified_at": "2026-07-10T19:18:20+08:00"},
+    {"source_id": "OSS-OBJ-G112", "canonical_id": "EV-0702-1", "refund_id": "YF-R-0702", "kind": "photo", "verification_status": "missing", "sha256_prefix": null, "captured_at": null, "verified_at": null},
+    {"source_id": "OSS-OBJ-H8B0", "canonical_id": "EV-0703-1", "refund_id": "YF-R-0703", "kind": "photo", "verification_status": "accepted", "sha256_prefix": "h8b0c621", "captured_at": "2026-07-10T19:20:00+08:00", "verified_at": "2026-07-10T19:22:10+08:00"},
+    {"source_id": "OSS-OBJ-J31F", "canonical_id": "EV-0704-1", "refund_id": "YF-R-0704", "kind": "video", "verification_status": "accepted", "sha256_prefix": "j31f801c", "captured_at": "2026-07-10T19:22:00+08:00", "verified_at": "2026-07-10T19:24:10+08:00"},
+    {"source_id": "OSS-OBJ-K52A", "canonical_id": "EV-0800-1", "refund_id": "YF-R-0800", "kind": "audio", "verification_status": "accepted", "sha256_prefix": "k52a19f0", "captured_at": "2026-07-10T19:24:00+08:00", "verified_at": "2026-07-10T19:26:10+08:00"}
+  ]
+}

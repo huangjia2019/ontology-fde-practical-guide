@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1",
+  "field_mappings": [
+    {"object": "Customer", "property": "customer_id", "source": "CRM.customer_master.customer_no", "authority": "master"},
+    {"object": "Customer", "property": "tier", "source": "CRM.customer_master.service_tier", "authority": "master"},
+    {"object": "Customer", "property": "channel", "source": "CRM.customer_master.account_channel", "authority": "master"},
+    {"object": "Order", "property": "status", "source": "COMMERCE.sales_order.fulfillment_status", "authority": "master"},
+    {"object": "Order", "property": "paid_amount", "source": "COMMERCE.sales_order.net_paid_cny", "authority": "master"},
+    {"object": "Order", "property": "invoice_status", "source": "ERP.invoice_ledger.status", "authority": "master", "not_found_maps_to": "unknown"},
+    {"object": "RefundRequest", "property": "status", "source": "AFTER_SALES.refund_request.workflow_state", "authority": "master"},
+    {"object": "RiskSignal", "property": "level", "source": "RISK.customer_signal.decision_level", "authority": "latest_observation"},
+    {"object": "Ticket", "property": "status", "source": "SUPPORT.ticket.case_status", "authority": "master"},
+    {"object": "Evidence", "property": "status", "source": "EVIDENCE.attachment.verification_status", "authority": "master"}
+  ],
+  "freshness_sla": {
+    "CRM": "24h",
+    "COMMERCE": "5m",
+    "ERP": "15m",
+    "SUPPORT": "5m",
+    "RISK": "10m",
+    "EVIDENCE": "5m",
+    "PAYMENTS": "1m"
+  }
+}

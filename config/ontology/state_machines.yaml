@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1",
+  "state_machines": {
+    "RefundRequest": {
+      "initial": "draft",
+      "terminal": ["rejected", "paid_out"],
+      "transitions": [
+        ["draft", "pending_review"],
+        ["pending_review", "pending_human"],
+        ["pending_review", "approved"],
+        ["pending_review", "rejected"],
+        ["pending_human", "approved"],
+        ["pending_human", "rejected"],
+        ["approved", "paid_out"],
+        ["approved", "approval_pending_payment"],
+        ["approval_pending_payment", "approved"],
+        ["approval_pending_payment", "paid_out"]
+      ]
+    },
+    "Order": {
+      "initial": "paid",
+      "terminal": ["closed"],
+      "transitions": [["paid", "shipped"], ["shipped", "signed"], ["signed", "closed"]]
+    },
+    "PaymentInstruction": {
+      "initial": "created",
+      "terminal": ["succeeded", "manual_review"],
+      "transitions": [["created", "submitted"], ["submitted", "succeeded"], ["created", "failed"], ["submitted", "failed"], ["failed", "manual_review"]]
+    }
+  }
+}

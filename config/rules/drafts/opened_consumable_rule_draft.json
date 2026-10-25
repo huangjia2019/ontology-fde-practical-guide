@@ -1,0 +1,48 @@
+{
+  "rule_id": "DRAFT-R1-OPENED-CONSUMABLE",
+  "title": "Route opened consumables delivered more than 24 hours ago to human review",
+  "knowledge_layers": {
+    "general": ["A refund action requires a verifiable object, time, and evidence"],
+    "context": ["Yunfan official-store B2C after-sales service", "Opened consumables"],
+    "decision": ["After 24 hours, do not use automatic refund; route the request to a customer service supervisor"]
+  },
+  "scope": {
+    "in_scope": {"channel": ["b2c"], "category": ["opened_consumable"]},
+    "out_of_scope": {"channel": ["b2b"], "reason": "Contract terms take precedence"}
+  },
+  "ontology_bindings": {
+    "customer_channel": "Customer.channel",
+    "item_category": "OrderItem.category",
+    "signed_at": "Order.signed_at",
+    "request_opened_at": "RefundRequest.opened_at",
+    "target_action": "Action.request_human_refund_approval"
+  },
+  "data_bindings": [
+    {"input": "customer_channel", "source": "CRM.customer_master.account_channel", "type": "enum", "unit": null, "freshness": "24h", "owner": "Customer Data Team", "missing_policy": "out_of_scope_and_route_human"},
+    {"input": "item_category", "source": "COMMERCE.order_line.category", "type": "enum", "unit": null, "freshness": "5m", "owner": "Commerce Platform Team", "missing_policy": "missing_data"},
+    {"input": "signed_at", "source": "COMMERCE.sales_order.signed_at", "type": "datetime", "unit": "ISO-8601", "freshness": "5m", "owner": "Commerce Platform Team", "missing_policy": "request_evidence"},
+    {"input": "request_opened_at", "source": "AFTER_SALES.refund_request.opened_at", "type": "datetime", "unit": "ISO-8601", "freshness": "5m", "owner": "Customer Service", "missing_policy": "missing_data"}
+  ],
+  "inputs": ["customer_channel", "item_category", "signed_at", "request_opened_at"],
+  "conditions": [
+    "customer_channel == b2c",
+    "item_category == opened_consumable",
+    "hours_between(signed_at, request_opened_at) > 24"
+  ],
+  "conclusion": {"action": "request_human_refund_approval", "reason_code": "opened_consumable_over_24h"},
+  "provenance": [
+    {"document_id": "DOC-AFTERSALES-POLICY-2026-07", "document_type": "approved_policy", "support": "normative"},
+    {"document_id": "TICKET-NOTE-2026-0618-042", "document_type": "expert_observation", "support": "corroborating"}
+  ],
+  "missing_inputs": ["opened_state_not_explicitly_modeled"],
+  "epistemic_status": "candidate_supported_by_policy",
+  "review_required": true,
+  "review_owner": "Customer Service Operations Lead",
+  "lifecycle": {
+    "state": "draft",
+    "allowed_transitions": ["draft->approved", "approved->compiled", "compiled->retired"],
+    "execution_allowed_states": ["compiled"]
+  },
+  "extraction_method": "offline_deterministic_demo",
+  "version": "draft-0.1"
+}

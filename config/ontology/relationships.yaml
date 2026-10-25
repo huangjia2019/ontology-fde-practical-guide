@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1",
+  "relationships": [
+    {"name": "OWNS", "from": "Customer", "to": "Order", "cardinality": "1:N", "join": "Order.customer_id"},
+    {"name": "CONTAINS", "from": "Order", "to": "OrderItem", "cardinality": "1:N", "join": "OrderItem.order_id"},
+    {"name": "TARGETS", "from": "RefundRequest", "to": "OrderItem", "cardinality": "N:1", "join": "RefundRequest.order_item_id"},
+    {"name": "FOR_ORDER", "from": "RefundRequest", "to": "Order", "cardinality": "N:1", "join": "RefundRequest.order_id"},
+    {"name": "REQUESTED_BY", "from": "RefundRequest", "to": "Customer", "cardinality": "N:1", "join": "RefundRequest.customer_id"},
+    {"name": "ABOUT", "from": "RiskSignal", "to": "Customer", "cardinality": "N:1", "join": "RiskSignal.customer_id"},
+    {"name": "OPENED_BY", "from": "Ticket", "to": "Customer", "cardinality": "N:1", "join": "Ticket.customer_id"},
+    {"name": "ABOUT_REFUND", "from": "Ticket", "to": "RefundRequest", "cardinality": "N:1", "join": "Ticket.refund_id"},
+    {"name": "BILLS", "from": "Invoice", "to": "Order", "cardinality": "N:1", "join": "Invoice.order_id"},
+    {"name": "SUPPORTS", "from": "Evidence", "to": "RefundRequest", "cardinality": "N:1", "join": "Evidence.refund_id"},
+    {"name": "SETTLES", "from": "PaymentInstruction", "to": "RefundRequest", "cardinality": "N:1", "join": "PaymentInstruction.refund_id"}
+  ]
+}

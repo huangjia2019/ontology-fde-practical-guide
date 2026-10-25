@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generated_for": "Fictional, de-identified Yunfan Technologies data",
+  "records": [
+    {"object_type": "Customer", "canonical_id": "C-8831", "sources": [{"system": "CRM", "source_id": "CRM-C-8831"}, {"system": "COMMERCE", "source_id": "BUYER-00932"}, {"system": "SUPPORT", "source_id": "CONTACT-48201"}]},
+    {"object_type": "Customer", "canonical_id": "C-1142", "sources": [{"system": "CRM", "source_id": "CRM-C-1142"}, {"system": "COMMERCE", "source_id": "BUYER-01142"}, {"system": "SUPPORT", "source_id": "CONTACT-48202"}]},
+    {"object_type": "Customer", "canonical_id": "C-4208", "sources": [{"system": "CRM", "source_id": "CRM-C-4208"}, {"system": "COMMERCE", "source_id": "BUYER-04208"}, {"system": "SUPPORT", "source_id": "CONTACT-48203"}]},
+    {"object_type": "Customer", "canonical_id": "C-5188", "sources": [{"system": "CRM", "source_id": "CRM-C-5188"}, {"system": "COMMERCE", "source_id": "BUYER-05188"}, {"system": "SUPPORT", "source_id": "CONTACT-48204"}]},
+    {"object_type": "Customer", "canonical_id": "C-7310", "sources": [{"system": "CRM", "source_id": "CRM-C-7310"}, {"system": "COMMERCE", "source_id": "BUYER-07310"}, {"system": "SUPPORT", "source_id": "CONTACT-48205"}]},
+    {"object_type": "Customer", "canonical_id": "C-9024", "sources": [{"system": "CRM", "source_id": "CRM-C-9024"}, {"system": "COMMERCE", "source_id": "BUYER-09024"}, {"system": "SUPPORT", "source_id": "CONTACT-48206"}]},
+    {"object_type": "Customer", "canonical_id": "C-6640", "sources": [{"system": "CRM", "source_id": "CRM-C-6640"}, {"system": "COMMERCE", "source_id": "BUYER-06640"}, {"system": "SUPPORT", "source_id": "CONTACT-48207"}]},
+    {"object_type": "Customer", "canonical_id": "C-8055", "sources": [{"system": "CRM", "source_id": "CRM-C-8055"}, {"system": "COMMERCE", "source_id": "BUYER-08055"}, {"system": "SUPPORT", "source_id": "CONTACT-48208"}]},
+    {"object_type": "Customer", "canonical_id": "C-9901", "sources": [{"system": "CRM", "source_id": "CRM-C-9901"}, {"system": "COMMERCE", "source_id": "BUYER-09901"}, {"system": "SUPPORT", "source_id": "CONTACT-48209"}]}
+  ]
+}

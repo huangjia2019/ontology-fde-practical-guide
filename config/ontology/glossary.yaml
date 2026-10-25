@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1",
+  "terms": [
+    {"term": "Refund request", "canonical": "RefundRequest", "definition": "A customer's request to return funds for one order item; it is distinct from compensation or a coupon."},
+    {"term": "Automatic approval", "canonical": "auto_approved", "definition": "The agent, acting as itself, advances a request of no more than RMB 500 after evidence, invoice, risk, frequency, and channel rules all pass."},
+    {"term": "Human approval", "canonical": "pending_human", "definition": "The agent creates an approval task with an evidence packet; an authorized person still makes the final decision."},
+    {"term": "Payment instruction", "canonical": "PaymentInstruction", "definition": "A business instruction sent to the existing ERP refund workflow. The agent does not call a bank or raw payment-refund API."},
+    {"term": "Compensation state", "canonical": "approval_pending_payment", "definition": "An explainable state in which approval occurred but the downstream instruction failed and Finance must resolve the work."},
+    {"term": "Confirmed absent invoice", "canonical": "invoice_status:none", "definition": "An authoritative ERP record explicitly confirms that no invoice was issued for the order, so the remaining automatic-approval checks may continue."},
+    {"term": "Unknown invoice status", "canonical": "invoice_status:unknown", "definition": "The query returned no confirmed status. A not_found observation must not be inferred to mean confirmed absent, and automatic approval must stop."},
+    {"term": "Third refund in 30 days", "canonical": "repeat_refund_30d", "definition": "The customer made two or more refund requests in the 30 days before the current request."}
+  ]
+}

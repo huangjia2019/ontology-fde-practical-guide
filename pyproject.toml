@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enterprise-ontology-fde-in-practice"
+version = "0.1.0"
+description = "Runnable Yunfan refund reference implementation for enterprise ontology and FDE practice"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Jia Huang" }]
+keywords = ["ontology", "fde", "agent", "governance", "audit"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+]
+
+[project.scripts]
+ontology-fde = "ontology_fde.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["ontology_fde*"]
+
+[tool.setuptools.package-data]
+ontology_fde = [
+  "web/*.html",
+  "web/*.css",
+  "web/*.js",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

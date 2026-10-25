@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "agents": [
+    {
+      "agent_id": "agent.cs.reception.001",
+      "name": "Yunfan Reception Agent",
+      "owner": "Customer Service",
+      "owns": ["Ticket.triage"],
+      "may_read": ["Ticket", "Customer"],
+      "may_delegate_to": ["agent.cs.refund.001"],
+      "writes": ["TaskEnvelope"]
+    },
+    {
+      "agent_id": "agent.cs.refund.001",
+      "name": "Yunfan Refund Agent",
+      "owner": "Customer Service",
+      "owns": ["RefundRequest.decision"],
+      "may_read": ["Customer", "Order", "OrderItem", "RefundRequest", "RiskSignal", "Ticket", "Invoice", "Evidence"],
+      "may_delegate_to": ["agent.cs.risk.001"],
+      "writes": [
+        "RefundRequest",
+        "PaymentInstruction",
+        "HumanApprovalPacket",
+        "EvidenceRequestDraft",
+        "FinanceManualTask",
+        "DecisionRecord"
+      ]
+    },
+    {
+      "agent_id": "agent.cs.risk.001",
+      "name": "Yunfan Risk Agent",
+      "owner": "Risk Management",
+      "owns": ["RiskSignal.assessment"],
+      "may_read": ["Customer", "Order", "RefundRequest", "RiskSignal"],
+      "may_delegate_to": [],
+      "writes": ["RiskSignal", "RiskReviewResult"]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+---
+title: 云帆退款项目：十站学习与受控执行
+---
+flowchart LR
+    subgraph LEARN[十站学习与交付顺序]
+        direction TB
+        P1[1 定业务范围 · 2 审视原有方案 · 3 登记身份]
+        P2[4 建立本体 · 5 约束动作 · 6 整理规则]
+        P3[7 验证权限 · 8 协作裁决 · 9 评估复盘]
+        P4[10 交接、复制与退出]
+        P1 --> P2 --> P3 --> P4
+    end
+
+    subgraph RUN[本地参考实现]
+        direction TB
+        S[八类来源样例：客户、订单、售后、财务、工单、风控、证据、付款]
+        O[统一编号、来源引用、对象关系与状态]
+        R[Read：返回事实]
+        D[Draft：检查规则，保留候选意见与裁决]
+        W{Write：主体、委托期限、业务条件与状态检查}
+        N[拒绝或补充证据草稿]
+        H[人工审批材料：pending_human]
+        A[批准并创建模拟付款指令：approved]
+        F[指令创建失败：approval_pending_payment 与财务任务]
+        DR[DecisionRecord：依据、前后状态、实际效果与调用顺序]
+        E[策略回放、执行器测试、故障与交接演练]
+        S --> O --> R --> D --> W
+        W -->|未获准或待补证| N
+        W -->|需人工决策| H
+        W -->|全部条件通过| A
+        A -->|创建指令失败| F
+        N --> DR
+        H --> DR
+        A --> DR
+        F --> DR
+        DR --> E
+    end
+
+    P2 -. 对照配置与实现 .-> O
+    P3 -. 验证判断与结果 .-> E
+    P4 -. 交接运行资料 .-> E
+
+    classDef source fill:#FFF1D4,stroke:#A96B12,color:#55330A;
+    classDef model fill:#E7F3FA,stroke:#2F799D,color:#173B50;
+    classDef stop fill:#FCEBE6,stroke:#BD624B,color:#632E23;
+    classDef record fill:#E9F4EC,stroke:#4E8A5D,color:#21452A;
+    class S source;
+    class O,R,D,W model;
+    class N,H,F stop;
+    class DR,E record;

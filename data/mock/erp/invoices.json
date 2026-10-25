@@ -1,0 +1,21 @@
+{
+  "source_system": "ERP",
+  "extract_id": "ERP-INV-20260711T090500+0800",
+  "extracted_at": "2026-07-11T09:05:00+08:00",
+  "records": [
+    {"source_id": "ERP-INV-202606-88420", "canonical_id": "INV-88420", "order_id": "O-9948", "invoice_number_masked": "0440****8420", "status": "issued", "amount_cny": 12800.00, "issued_at": "2026-06-16T09:30:00+08:00", "updated_at": "2026-07-10T23:58:00+08:00"},
+    {"source_id": "ERP-INV-202607-89107", "canonical_id": "INV-89107", "order_id": "O-9963", "invoice_number_masked": "0440****9107", "status": "issued", "amount_cny": 260.00, "issued_at": "2026-07-02T11:10:00+08:00", "updated_at": "2026-07-10T23:58:00+08:00"}
+  ],
+  "status_confirmations": [
+    {"source_id": "ERP-INVCHK-9941", "canonical_id": "INV-CHECK-O-9941", "record_type": "invoice_status_confirmation", "order_id": "O-9941", "status": "none", "confirmed_at": "2026-07-11T09:05:00+08:00", "updated_at": "2026-07-11T09:05:00+08:00"},
+    {"source_id": "ERP-INVCHK-9950", "canonical_id": "INV-CHECK-O-9950", "record_type": "invoice_status_confirmation", "order_id": "O-9950", "status": "none", "confirmed_at": "2026-07-11T09:05:00+08:00", "updated_at": "2026-07-11T09:05:00+08:00"},
+    {"source_id": "ERP-INVCHK-9951", "canonical_id": "INV-CHECK-O-9951", "record_type": "invoice_status_confirmation", "order_id": "O-9951", "status": "none", "confirmed_at": "2026-07-11T09:05:00+08:00", "updated_at": "2026-07-11T09:05:00+08:00"},
+    {"source_id": "ERP-INVCHK-9955", "canonical_id": "INV-CHECK-O-9955", "record_type": "invoice_status_confirmation", "order_id": "O-9955", "status": "none", "confirmed_at": "2026-07-11T09:05:00+08:00", "updated_at": "2026-07-11T09:05:00+08:00"},
+    {"source_id": "ERP-INVCHK-9960", "canonical_id": "INV-CHECK-O-9960", "record_type": "invoice_status_confirmation", "order_id": "O-9960", "status": "none", "confirmed_at": "2026-07-11T09:05:00+08:00", "updated_at": "2026-07-11T09:05:00+08:00"},
+    {"source_id": "ERP-INVCHK-9961", "canonical_id": "INV-CHECK-O-9961", "record_type": "invoice_status_confirmation", "order_id": "O-9961", "status": "none", "confirmed_at": "2026-07-11T09:05:00+08:00", "updated_at": "2026-07-11T09:05:00+08:00"},
+    {"source_id": "ERP-INVCHK-9962", "canonical_id": "INV-CHECK-O-9962", "record_type": "invoice_status_confirmation", "order_id": "O-9962", "status": "none", "confirmed_at": "2026-07-11T09:05:00+08:00", "updated_at": "2026-07-11T09:05:00+08:00"},
+    {"source_id": "ERP-INVCHK-9968", "canonical_id": "INV-CHECK-O-9968", "record_type": "invoice_status_confirmation", "order_id": "O-9968", "status": "none", "confirmed_at": "2026-07-11T09:05:00+08:00", "updated_at": "2026-07-11T09:05:00+08:00"},
+    {"source_id": "ERP-INVCHK-9701", "canonical_id": "INV-CHECK-O-9701", "record_type": "invoice_status_confirmation", "order_id": "O-9701", "status": "none", "confirmed_at": "2026-07-11T09:05:00+08:00", "updated_at": "2026-07-11T09:05:00+08:00"},
+    {"source_id": "ERP-INVCHK-9710", "canonical_id": "INV-CHECK-O-9710", "record_type": "invoice_status_confirmation", "order_id": "O-9710", "status": "none", "confirmed_at": "2026-07-11T09:05:00+08:00", "updated_at": "2026-07-11T09:05:00+08:00"}
+  ]
+}

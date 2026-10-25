@@ -1,0 +1,42 @@
+{
+  "envelope_id": "ENV-T-0610",
+  "correlation_id": "CORR-YF-R-0610",
+  "sender": "agent.cs.reception.001",
+  "recipient": "agent.cs.refund.001",
+  "task_type": "assess_refund_request",
+  "goal": "Return a disposition within the Action Contract and refund-policy boundary",
+  "object_refs": [
+    "Ticket#T-0610",
+    "Customer#C-9024",
+    "Order#O-9960",
+    "OrderItem#OI-9960-1",
+    "RefundRequest#YF-R-0610"
+  ],
+  "allowed_actions": [
+    "approve_refund_small",
+    "request_human_refund_approval",
+    "request_missing_evidence"
+  ],
+  "forbidden_actions": [
+    "approve_refund_above_500",
+    "change_refund_amount"
+  ],
+  "context_scope": [
+    "Customer",
+    "Evidence",
+    "Invoice",
+    "Order",
+    "OrderItem",
+    "RefundRequest",
+    "RiskSignal",
+    "Ticket"
+  ],
+  "expires_at": "2026-07-10T23:18:00+08:00",
+  "status": "accepted",
+  "constraints": {
+    "max_auto_approve_cny": 500,
+    "risk_signal_required": true,
+    "accepted_evidence_required": true,
+    "raw_payment_forbidden": true
+  }
+}

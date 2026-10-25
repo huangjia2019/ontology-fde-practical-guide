@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "POL-REFUND-2026",
+  "version": "refund-rules-v1.0",
+  "owner": "Customer Service Operations Lead",
+  "expert_source": "Chen's after-sales decision workshop (fictional case)",
+  "rules": [
+    {
+      "rule_id": "R1",
+      "name": "24-hour boundary for opened consumables",
+      "when": "OrderItem.category == opened_consumable and hours_since_signed > 24",
+      "then": "request_human_refund_approval",
+      "reason": "An opened consumable delivered more than 24 hours ago cannot use the automatic path"
+    },
+    {
+      "rule_id": "R2",
+      "name": "Finance review for an issued invoice",
+      "when": "Order.invoice_status == issued",
+      "then": "request_human_refund_approval",
+      "reason": "Do not create an automatic payment instruction before the invoice is reversed"
+    },
+    {
+      "rule_id": "R3",
+      "name": "Human handling for blocklisted customers",
+      "when": "Customer.tier == blacklist",
+      "then": "request_human_refund_approval",
+      "reason": "Every refund request from a blocklisted customer requires human review"
+    },
+    {
+      "rule_id": "R4",
+      "name": "Third refund within 30 days",
+      "when": "previous_refunds_30d >= 2",
+      "then": "request_human_refund_approval",
+      "reason": "The current request is the customer's third or later refund within 30 days"
+    },
+    {
+      "rule_id": "R5",
+      "name": "B2B contract path",
+      "when": "Customer.channel in [b2b, unknown]",
+      "then": "request_human_refund_approval",
+      "reason": "Check contract terms first for B2B customers or when the channel is missing"
+    }
+  ],
+  "hard_guards": [
+    {"guard_id": "G-EVIDENCE", "when": "Evidence.status != accepted", "then": "request_missing_evidence"},
+    {"guard_id": "G-INVOICE-UNKNOWN", "when": "Order.invoice_status in [unknown, pending]", "then": "request_human_refund_approval"},
+    {"guard_id": "G-RISK", "when": "RiskSignal.level in [review, block]", "then": "request_human_refund_approval"},
+    {"guard_id": "G-AMOUNT", "when": "RefundRequest.amount > 500", "then": "request_human_refund_approval"}
+  ]
+}

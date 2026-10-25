@@ -1,0 +1,22 @@
+{
+  "source_system": "DMS",
+  "document_set_id": "DMS-REFUND-POLICY-DEMO-202607",
+  "documents": [
+    {
+      "document_id": "DOC-AFTERSALES-POLICY-2026-07",
+      "title": "Yunfan Store After-Sales Policy v2026.07 (fictional)",
+      "document_type": "approved_policy",
+      "effective_from": "2026-07-01",
+      "owner": "Customer Service",
+      "text": "This policy applies to B2C orders placed through the official online store. Opened consumables such as microphone windscreens may not enter the automatic refund path more than 24 hours after delivery and must be routed to a customer service supervisor for human review. If the delivery time is missing or whether the package was opened cannot be confirmed, the system must not infer either fact and must request additional evidence. B2B contract customers are governed by their contract terms and are outside this rule."
+    },
+    {
+      "document_id": "TICKET-NOTE-2026-0618-042",
+      "title": "Historical Ticket Note (fictional)",
+      "document_type": "expert_observation",
+      "effective_from": null,
+      "owner": "Chen, Customer Service Supervisor (fictional)",
+      "text": "This windscreen package was opened two days ago, so the system must not refund it automatically. I would send it to a supervisor. If the photo does not show whether it was opened, ask the customer for another photo. Do not guess."
+    }
+  ]
+}

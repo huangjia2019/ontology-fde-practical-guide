@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "POL-AGENT-CONFLICT-001",
+  "version": "1.0",
+  "owner": "Risk Management",
+  "priorities": [
+    {"rank": 1, "proposal": "RiskAgent:block", "wins_over": ["RiskAgent:review", "RefundAgent:approve"]},
+    {"rank": 2, "proposal": "RiskAgent:review", "wins_over": ["RefundAgent:approve"]},
+    {"rank": 3, "proposal": "RefundAgent:approve", "wins_over": []}
+  ],
+  "rule": "Any review or block risk signal overrides a refund approval candidate and routes the request to human approval",
+  "audit": ["all_candidates", "winning_proposal", "rule_id", "correlation_id", "envelope_id"]
+}

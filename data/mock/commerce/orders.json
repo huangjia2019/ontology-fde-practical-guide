@@ -1,0 +1,35 @@
+{
+  "source_system": "COMMERCE",
+  "extract_id": "SHOP-CDC-20260711T090200+0800",
+  "extracted_at": "2026-07-11T09:02:00+08:00",
+  "orders": [
+    {"source_id": "SHOP-ORD-20260701-9938", "canonical_id": "O-9938", "buyer_source_id": "BUYER-00932", "customer_id": "C-8831", "fulfillment_status": "signed", "net_paid_cny": 347.00, "paid_at": "2026-07-01T10:03:14+08:00", "signed_at": "2026-07-04T16:42:00+08:00", "updated_at": "2026-07-10T18:41:00+08:00"},
+    {"source_id": "SHOP-ORD-20260702-9941", "canonical_id": "O-9941", "buyer_source_id": "BUYER-01142", "customer_id": "C-1142", "fulfillment_status": "signed", "net_paid_cny": 199.00, "paid_at": "2026-07-02T09:13:00+08:00", "signed_at": "2026-07-05T13:10:00+08:00", "updated_at": "2026-07-10T18:42:00+08:00"},
+    {"source_id": "SHOP-ORD-20260615-9948", "canonical_id": "O-9948", "buyer_source_id": "BUYER-04208", "customer_id": "C-4208", "fulfillment_status": "closed", "net_paid_cny": 12800.00, "paid_at": "2026-06-15T15:20:00+08:00", "signed_at": "2026-06-20T11:00:00+08:00", "updated_at": "2026-07-10T18:43:00+08:00"},
+    {"source_id": "SHOP-ORD-20260703-9950", "canonical_id": "O-9950", "buyer_source_id": "BUYER-05188", "customer_id": "C-5188", "fulfillment_status": "signed", "net_paid_cny": 500.00, "paid_at": "2026-07-03T20:11:00+08:00", "signed_at": "2026-07-06T10:05:00+08:00", "updated_at": "2026-07-10T18:44:00+08:00"},
+    {"source_id": "SHOP-ORD-20260703-9951", "canonical_id": "O-9951", "buyer_source_id": "BUYER-05188", "customer_id": "C-5188", "fulfillment_status": "signed", "net_paid_cny": 680.00, "paid_at": "2026-07-03T20:18:00+08:00", "signed_at": "2026-07-06T10:08:00+08:00", "updated_at": "2026-07-10T18:45:00+08:00"},
+    {"source_id": "SHOP-ORD-20260705-9955", "canonical_id": "O-9955", "buyer_source_id": "BUYER-07310", "customer_id": "C-7310", "fulfillment_status": "signed", "net_paid_cny": 320.00, "paid_at": "2026-07-05T12:30:00+08:00", "signed_at": "2026-07-08T18:12:00+08:00", "updated_at": "2026-07-10T18:46:00+08:00"},
+    {"source_id": "SHOP-ORD-20260704-9960", "canonical_id": "O-9960", "buyer_source_id": "BUYER-09024", "customer_id": "C-9024", "fulfillment_status": "signed", "net_paid_cny": 280.00, "paid_at": "2026-07-04T11:00:00+08:00", "signed_at": "2026-07-07T14:30:00+08:00", "updated_at": "2026-07-10T18:47:00+08:00"},
+    {"source_id": "SHOP-ORD-20260706-9961", "canonical_id": "O-9961", "buyer_source_id": "BUYER-06640", "customer_id": "C-6640", "fulfillment_status": "signed", "net_paid_cny": 88.00, "paid_at": "2026-07-06T09:42:00+08:00", "signed_at": "2026-07-09T15:20:00+08:00", "updated_at": "2026-07-10T18:48:00+08:00"},
+    {"source_id": "SHOP-ORD-20260706-9962", "canonical_id": "O-9962", "buyer_source_id": "BUYER-06640", "customer_id": "C-6640", "fulfillment_status": "signed", "net_paid_cny": 120.00, "paid_at": "2026-07-06T09:49:00+08:00", "signed_at": "2026-07-08T08:00:00+08:00", "updated_at": "2026-07-10T18:49:00+08:00"},
+    {"source_id": "SHOP-ORD-20260701-9963", "canonical_id": "O-9963", "buyer_source_id": "BUYER-08055", "customer_id": "C-8055", "fulfillment_status": "closed", "net_paid_cny": 260.00, "paid_at": "2026-07-01T08:30:00+08:00", "signed_at": "2026-07-04T12:10:00+08:00", "updated_at": "2026-07-10T18:50:00+08:00"},
+    {"source_id": "SHOP-ORD-20260707-9968", "canonical_id": "O-9968", "buyer_source_id": "BUYER-09901", "customer_id": "C-9901", "fulfillment_status": "signed", "net_paid_cny": 460.00, "paid_at": "2026-07-07T16:20:00+08:00", "signed_at": "2026-07-10T09:30:00+08:00", "updated_at": "2026-07-10T18:51:00+08:00"},
+    {"source_id": "SHOP-ORD-20260622-9701", "canonical_id": "O-9701", "buyer_source_id": "BUYER-07310", "customer_id": "C-7310", "fulfillment_status": "closed", "net_paid_cny": 98.00, "paid_at": "2026-06-22T10:00:00+08:00", "signed_at": "2026-06-24T10:00:00+08:00", "updated_at": "2026-06-28T12:00:00+08:00"},
+    {"source_id": "SHOP-ORD-20260627-9710", "canonical_id": "O-9710", "buyer_source_id": "BUYER-07310", "customer_id": "C-7310", "fulfillment_status": "closed", "net_paid_cny": 68.00, "paid_at": "2026-06-27T10:00:00+08:00", "signed_at": "2026-06-29T10:00:00+08:00", "updated_at": "2026-07-02T12:00:00+08:00"}
+  ],
+  "items": [
+    {"source_id": "SHOP-LINE-9938-1", "canonical_id": "OI-9938-1", "order_id": "O-9938", "sku": "YF-RC-02", "product_name": "Conference display remote control", "category": "accessory", "qty": 1, "condition": "damaged"},
+    {"source_id": "SHOP-LINE-9941-1", "canonical_id": "OI-9941-1", "order_id": "O-9941", "sku": "YF-CBL-06", "product_name": "Six-meter conference cable", "category": "accessory", "qty": 1, "condition": "normal"},
+    {"source_id": "SHOP-LINE-9948-3", "canonical_id": "OI-9948-3", "order_id": "O-9948", "sku": "YF-SAAS-SEAT", "product_name": "Yunfan Meetings annual seat", "category": "saas", "qty": 1, "condition": "normal"},
+    {"source_id": "SHOP-LINE-9950-1", "canonical_id": "OI-9950-1", "order_id": "O-9950", "sku": "YF-MIC-MINI", "product_name": "Desktop omnidirectional microphone", "category": "hardware", "qty": 1, "condition": "damaged"},
+    {"source_id": "SHOP-LINE-9951-1", "canonical_id": "OI-9951-1", "order_id": "O-9951", "sku": "YF-CAM-01", "product_name": "Conference camera", "category": "hardware", "qty": 1, "condition": "damaged"},
+    {"source_id": "SHOP-LINE-9955-1", "canonical_id": "OI-9955-1", "order_id": "O-9955", "sku": "YF-HUB-03", "product_name": "Multiport dock", "category": "accessory", "qty": 1, "condition": "normal"},
+    {"source_id": "SHOP-LINE-9960-1", "canonical_id": "OI-9960-1", "order_id": "O-9960", "sku": "YF-STAND-02", "product_name": "Mobile display stand accessory", "category": "accessory", "qty": 1, "condition": "damaged"},
+    {"source_id": "SHOP-LINE-9961-1", "canonical_id": "OI-9961-1", "order_id": "O-9961", "sku": "YF-ADP-01", "product_name": "Power adapter", "category": "accessory", "qty": 1, "condition": "damaged"},
+    {"source_id": "SHOP-LINE-9962-1", "canonical_id": "OI-9962-1", "order_id": "O-9962", "sku": "YF-FOAM-10", "product_name": "Microphone windscreens, pack of 10", "category": "opened_consumable", "qty": 1, "condition": "normal"},
+    {"source_id": "SHOP-LINE-9963-1", "canonical_id": "OI-9963-1", "order_id": "O-9963", "sku": "YF-RC-02", "product_name": "Conference display remote control", "category": "accessory", "qty": 1, "condition": "damaged"},
+    {"source_id": "SHOP-LINE-9968-1", "canonical_id": "OI-9968-1", "order_id": "O-9968", "sku": "YF-MIC-MINI", "product_name": "Desktop omnidirectional microphone", "category": "hardware", "qty": 1, "condition": "damaged"},
+    {"source_id": "SHOP-LINE-9701-1", "canonical_id": "OI-9701-1", "order_id": "O-9701", "sku": "YF-ADP-01", "product_name": "Power adapter", "category": "accessory", "qty": 1, "condition": "returned"},
+    {"source_id": "SHOP-LINE-9710-1", "canonical_id": "OI-9710-1", "order_id": "O-9710", "sku": "YF-CBL-02", "product_name": "Two-meter cable", "category": "accessory", "qty": 1, "condition": "returned"}
+  ]
+}

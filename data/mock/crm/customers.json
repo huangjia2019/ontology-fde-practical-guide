@@ -1,0 +1,16 @@
+{
+  "source_system": "CRM",
+  "extract_id": "CRM-EXTRACT-20260711T090000+0800",
+  "extracted_at": "2026-07-11T09:00:00+08:00",
+  "records": [
+    {"source_id": "CRM-C-8831", "canonical_id": "C-8831", "name": "Clearwave Creative Studio", "service_tier": "normal", "account_channel": "b2c", "region": "East China", "created_at": "2025-11-03T14:20:00+08:00", "updated_at": "2026-07-10T18:42:11+08:00"},
+    {"source_id": "CRM-C-1142", "canonical_id": "C-1142", "name": "Northstar Trading (test)", "service_tier": "blacklist", "account_channel": "b2c", "region": "North China", "created_at": "2025-08-19T09:12:00+08:00", "updated_at": "2026-07-08T11:05:00+08:00"},
+    {"source_id": "CRM-C-4208", "canonical_id": "C-4208", "name": "Nova Consulting Ltd.", "service_tier": "vip", "account_channel": "b2b", "region": "South China", "created_at": "2024-04-15T10:00:00+08:00", "updated_at": "2026-07-09T16:33:09+08:00"},
+    {"source_id": "CRM-C-5188", "canonical_id": "C-5188", "name": "Mr. Lin (de-identified)", "service_tier": "vip", "account_channel": "b2c", "region": "Southwest China", "created_at": "2025-12-20T08:30:00+08:00", "updated_at": "2026-07-10T19:02:44+08:00"},
+    {"source_id": "CRM-C-7310", "canonical_id": "C-7310", "name": "Bluestone Design Studio", "service_tier": "normal", "account_channel": "b2c", "region": "East China", "created_at": "2026-01-07T13:45:00+08:00", "updated_at": "2026-07-11T08:50:00+08:00"},
+    {"source_id": "CRM-C-9024", "canonical_id": "C-9024", "name": "FarSail Education Technology", "service_tier": "normal", "account_channel": "b2c", "region": "Central China", "created_at": "2025-06-11T11:20:00+08:00", "updated_at": "2026-07-11T08:52:00+08:00"},
+    {"source_id": "CRM-C-6640", "canonical_id": "C-6640", "name": "Ms. Zhou (de-identified)", "service_tier": "normal", "account_channel": "b2c", "region": "East China", "created_at": "2026-02-16T15:22:00+08:00", "updated_at": "2026-07-11T08:53:00+08:00"},
+    {"source_id": "CRM-C-8055", "canonical_id": "C-8055", "name": "Golden Hour Media", "service_tier": "normal", "account_channel": "b2c", "region": "South China", "created_at": "2025-10-08T09:40:00+08:00", "updated_at": "2026-07-11T08:54:00+08:00"},
+    {"source_id": "CRM-C-9901", "canonical_id": "C-9901", "name": "Mistbridge Digital Studio", "service_tier": "normal", "account_channel": "b2c", "region": "North China", "created_at": "2026-03-12T12:10:00+08:00", "updated_at": "2026-07-11T08:55:00+08:00"}
+  ]
+}

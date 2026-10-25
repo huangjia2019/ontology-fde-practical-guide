@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "action_id": "request_human_refund_approval",
+  "business_meaning": "Route an over-limit or policy-flagged refund, with its evidence packet, to an authorized person",
+  "owner": "Customer Service",
+  "version": "contract-v1.0",
+  "actor": {"allowed": ["agent.cs.refund.001"], "representation": "as_itself"},
+  "target_object": "RefundRequest",
+  "risk_level": "low",
+  "preconditions": [
+    "RefundRequest.status == pending_review",
+    "amount > 500 or policy_requires_human == true"
+  ],
+  "effects": [
+    "RefundRequest.status -> pending_human",
+    "HumanApprovalPacket.created",
+    "DecisionRecord.created"
+  ],
+  "approval": {"required_to_create_task": false, "required_to_approve_refund": true},
+  "idempotency": {"key": "refund_id + action_id + intent_id", "on_duplicate": "return_original_decision_record"},
+  "compensation": {"action": "close_duplicate_human_task"},
+  "audit_required": ["decision_id", "actor", "permission_policy_id", "authority", "target_objects", "checks", "rule_hits", "approval"]
+}

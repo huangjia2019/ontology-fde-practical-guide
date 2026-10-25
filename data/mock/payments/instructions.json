@@ -1,0 +1,9 @@
+{
+  "source_system": "PAYMENTS",
+  "extract_id": "ERP-PAY-20260711T090800+0800",
+  "extracted_at": "2026-07-11T09:08:00+08:00",
+  "records": [
+    {"source_id": "ERP-RFND-77001", "canonical_id": "PI-H001", "refund_id": "YF-R-H001", "status": "succeeded", "amount_cny": 98.00, "created_at": "2026-06-27T10:00:00+08:00", "updated_at": "2026-06-28T11:50:00+08:00"},
+    {"source_id": "ERP-RFND-77002", "canonical_id": "PI-H002", "refund_id": "YF-R-H002", "status": "succeeded", "amount_cny": 68.00, "created_at": "2026-07-02T10:00:00+08:00", "updated_at": "2026-07-03T11:50:00+08:00"}
+  ]
+}

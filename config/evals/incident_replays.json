@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "name": "Historical incident replay additions",
+  "version": "incident-replay-v1.1",
+  "cases": [
+    {"case_id": "INC-REPLAY-001", "origin": "Incident caused by a missing B2B channel field", "given": {"customer_channel": "unknown", "amount": 480}, "expect": {"decision": "queue_human", "rule_hit": "R5"}},
+    {"case_id": "INC-REPLAY-002", "origin": "Incident caused by unexpected capitalization in the B2B channel field", "given": {"customer_channel": "B2B", "amount": 480}, "expect": {"decision": "queue_human", "rule_hit": "R5"}}
+  ]
+}

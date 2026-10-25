@@ -1,0 +1,86 @@
+{
+  "schema_version": "0.1",
+  "core_objects": [
+    {
+      "name": "Customer",
+      "id_field": "customer_id",
+      "owner": "Customer Data Team",
+      "properties": {
+        "customer_id": "string|required",
+        "name": "string|required",
+        "tier": "enum(normal,vip,blacklist)|required",
+        "channel": "enum(b2c,b2b,unknown)|required"
+      }
+    },
+    {
+      "name": "Order",
+      "id_field": "order_id",
+      "owner": "Commerce Platform Team",
+      "properties": {
+        "order_id": "string|required",
+        "customer_id": "Customer.customer_id|required",
+        "status": "enum(paid,shipped,signed,closed)|required",
+        "paid_amount": "decimal|required",
+        "invoice_status": "enum(unknown,none,pending,issued,reversed)|required",
+        "signed_at": "datetime|null"
+      }
+    },
+    {
+      "name": "OrderItem",
+      "id_field": "item_id",
+      "owner": "Commerce Platform Team",
+      "properties": {
+        "item_id": "string|required",
+        "order_id": "Order.order_id|required",
+        "sku": "string|required",
+        "category": "enum(hardware,accessory,opened_consumable,saas)|required",
+        "qty": "integer|min:1",
+        "condition": "enum(normal,damaged,missing,returned)|required"
+      }
+    },
+    {
+      "name": "RefundRequest",
+      "id_field": "refund_id",
+      "owner": "Customer Service",
+      "properties": {
+        "refund_id": "string|required",
+        "customer_id": "Customer.customer_id|required",
+        "order_id": "Order.order_id|required",
+        "order_item_id": "OrderItem.item_id|required",
+        "amount": "decimal|required|min:0",
+        "status": "RefundRequestState|required",
+        "reason_code": "string|required",
+        "opened_at": "datetime|required"
+      }
+    },
+    {
+      "name": "RiskSignal",
+      "id_field": "signal_id",
+      "owner": "Risk Management",
+      "properties": {
+        "signal_id": "string|required",
+        "customer_id": "Customer.customer_id|required",
+        "level": "enum(clear,review,block)|required",
+        "reason": "string|required",
+        "observed_at": "datetime|required"
+      }
+    },
+    {
+      "name": "Ticket",
+      "id_field": "ticket_id",
+      "owner": "Customer Service",
+      "properties": {
+        "ticket_id": "string|required",
+        "customer_id": "Customer.customer_id|required",
+        "refund_id": "RefundRequest.refund_id|null",
+        "type": "enum(refund,complaint,question)|required",
+        "status": "enum(open,triaged,resolved)|required"
+      }
+    }
+  ],
+  "supporting_objects": [
+    {"name": "Invoice", "id_field": "invoice_id", "owner": "Finance"},
+    {"name": "Evidence", "id_field": "evidence_id", "owner": "Customer Service"},
+    {"name": "PaymentInstruction", "id_field": "instruction_id", "owner": "Finance"}
+  ]
+}

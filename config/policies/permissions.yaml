@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "POL-LEAST-PRIVILEGE",
+  "agent_id": "agent.cs.refund.001",
+  "dimensions": {
+    "data": {
+      "allow_objects": ["Customer", "Order", "OrderItem", "RefundRequest", "RiskSignal", "Ticket", "Invoice", "Evidence"],
+      "deny_fields": ["Customer.national_id", "Customer.full_bank_card", "Customer.marketing_profile"]
+    },
+    "tools": {
+      "allow": ["query_refund_context", "evaluate_refund_rules", "create_payment_instruction", "create_human_approval_task"],
+      "deny": ["raw_bank_refund", "modify_invoice", "modify_contract"]
+    },
+    "actions": {
+      "allow": ["approve_refund_small", "request_human_refund_approval", "request_missing_evidence"],
+      "deny": ["approve_refund_above_500", "change_refund_amount"]
+    },
+    "conditions": {
+      "approve_refund_small": "amount <= 500 and risk == clear and evidence == accepted",
+      "request_human_refund_approval": "status == pending_review"
+    },
+    "time": {"valid_from": "2026-07-01T00:00:00+08:00", "valid_until": "2026-12-31T23:59:59+08:00"},
+    "environment": {"allow": ["demo", "gray"], "production_write": false}
+  }
+}

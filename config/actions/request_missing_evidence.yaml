@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "action_id": "request_missing_evidence",
+  "business_meaning": "Draft a request for additional evidence without approving or rejecting the refund",
+  "owner": "Customer Service",
+  "version": "contract-v1.0",
+  "actor": {"allowed": ["agent.cs.refund.001"], "representation": "as_itself"},
+  "target_object": "RefundRequest",
+  "risk_level": "low",
+  "preconditions": ["Evidence.status != accepted"],
+  "effects": ["EvidenceRequestDraft.created", "RefundRequest.status unchanged", "DecisionRecord.created"],
+  "approval": {"required": false},
+  "idempotency": {"key": "refund_id + action_id + intent_id", "on_duplicate": "return_original_decision_record"},
+  "audit_required": ["decision_id", "actor", "permission_policy_id", "authority", "target_objects", "checks", "rule_hits"]
+}

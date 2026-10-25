@@ -1,0 +1,16 @@
+{
+  "source_system": "RISK",
+  "extract_id": "RISK-SNAPSHOT-20260711T090700+0800",
+  "extracted_at": "2026-07-11T09:07:00+08:00",
+  "records": [
+    {"source_id": "RSK-SIG-7011", "canonical_id": "RS-7011", "customer_id": "C-8831", "decision_level": "clear", "reason_code": "baseline_clear", "reason": "No anomalous transactions in the past 90 days", "model_score": 0.08, "observed_at": "2026-07-10T18:39:40+08:00", "expires_at": "2026-07-11T18:39:40+08:00"},
+    {"source_id": "RSK-SIG-7012", "canonical_id": "RS-7012", "customer_id": "C-1142", "decision_level": "block", "reason_code": "identity_abuse_history", "reason": "Account-abuse history requires human verification", "model_score": 0.97, "observed_at": "2026-07-10T18:44:12+08:00", "expires_at": "2026-07-17T18:44:12+08:00"},
+    {"source_id": "RSK-SIG-7013", "canonical_id": "RS-7013", "customer_id": "C-4208", "decision_level": "clear", "reason_code": "contract_customer", "reason": "No risk anomaly for this contract customer", "model_score": 0.03, "observed_at": "2026-07-10T19:04:20+08:00", "expires_at": "2026-07-11T19:04:20+08:00"},
+    {"source_id": "RSK-SIG-7014", "canonical_id": "RS-7014", "customer_id": "C-5188", "decision_level": "clear", "reason_code": "vip_clear", "reason": "No anomaly for this VIP customer in the past 90 days", "model_score": 0.04, "observed_at": "2026-07-10T19:09:20+08:00", "expires_at": "2026-07-11T19:09:20+08:00"},
+    {"source_id": "RSK-SIG-7015", "canonical_id": "RS-7015", "customer_id": "C-7310", "decision_level": "clear", "reason_code": "baseline_clear", "reason": "The model does not cover refund frequency; Customer Service policy evaluates that rule", "model_score": 0.12, "observed_at": "2026-07-10T19:14:20+08:00", "expires_at": "2026-07-11T19:14:20+08:00"},
+    {"source_id": "RSK-SIG-7016", "canonical_id": "RS-7016", "customer_id": "C-9024", "decision_level": "review", "reason_code": "device_velocity", "reason": "Several after-sales requests came from the same device within a short period", "model_score": 0.68, "observed_at": "2026-07-10T19:17:20+08:00", "expires_at": "2026-07-11T19:17:20+08:00"},
+    {"source_id": "RSK-SIG-7017", "canonical_id": "RS-7017", "customer_id": "C-6640", "decision_level": "clear", "reason_code": "baseline_clear", "reason": "No anomalous transactions in the past 90 days", "model_score": 0.06, "observed_at": "2026-07-10T19:19:20+08:00", "expires_at": "2026-07-11T19:19:20+08:00"},
+    {"source_id": "RSK-SIG-7018", "canonical_id": "RS-7018", "customer_id": "C-8055", "decision_level": "clear", "reason_code": "baseline_clear", "reason": "No anomalous transactions in the past 90 days", "model_score": 0.07, "observed_at": "2026-07-10T19:23:20+08:00", "expires_at": "2026-07-11T19:23:20+08:00"},
+    {"source_id": "RSK-SIG-7019", "canonical_id": "RS-7019", "customer_id": "C-9901", "decision_level": "clear", "reason_code": "baseline_clear", "reason": "No anomalous transactions in the past 90 days", "model_score": 0.05, "observed_at": "2026-07-10T19:25:20+08:00", "expires_at": "2026-07-11T19:25:20+08:00"}
+  ]
+}
