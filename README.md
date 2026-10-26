@@ -23,8 +23,8 @@ FDE 要把这些事情问明白，和业务人员、系统负责人一起作出�
 Python 3.11+，仅使用标准库。本地样例数据，离线运行。
 
 ```bash
-git clone https://github.com/huangjia2019/ontology-fde-practical-guide.git
-cd ontology-fde-practical-guide
+git clone https://github.com/huangjia2019/ontology-fde.git
+cd ontology-fde
 python3 run.py serve --port 8000
 ```
 
@@ -132,4 +132,4 @@ python3 run.py evaluate --output artifacts/evaluation-report.json
 
 ## 问题反馈
 
-请在 [Issues](https://github.com/huangjia2019/ontology-fde-practical-guide/issues) 提供环境、复现命令及预期与实际结果，勿上传密钥或客户数据。
+请在 [Issues](https://github.com/huangjia2019/ontology-fde/issues) 提供环境、复现命令及预期与实际结果，勿上传密钥或客户数据。
